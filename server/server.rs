@@ -9,6 +9,7 @@ async fn main() {
 
     let index_route = 
         warp::path("index.html").map(move ||  {
+            warp::http::Response::builder()
             .header("Content-Type", "text/html")
             .body(index_html)
     });
