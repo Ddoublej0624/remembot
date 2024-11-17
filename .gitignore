@@ -46,3 +46,5 @@ keystores/
 
 # Metro bundler cache
 /metro-cache/
+
+frontend/node_modules
