@@ -1,0 +1,19 @@
+[package]
+name = "server-runtime"
+version = "0.1.0"
+edition = "2021"
+#TODO: Write description
+#TODO: Add authors
+
+#Server module
+
+#Runner executable
+[[bin]]
+name = "runner"
+path = "src/entrypoint.rs"
+
+[dependencies]
+anyhow.workspace = true
+log.workspace = true
+server-api.workspace = true
+server-core.workspace = true

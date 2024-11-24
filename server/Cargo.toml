@@ -1,14 +1,15 @@
-[package]
-name = "server"
-version = "0.1.0"
-edition = "2021"
+#Toplevel workspace file, declares gloabl dependencies to ensure all submodules will use the expected versions.
+[workspace]
+resolver = "2" #This is just stupid cargo cruft, since we're using edition 2021 we use resolver "version 2"..hopefully they will get rid of this warning soon. It has no other impacts.
+#Define which crates get included as part of our workspace
+members = [
+    "crates/server-runtime", 
+    "crates/server-core"
+]
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
-[dependencies]
-warp = "0.3"
-tokio ={ version="1", features=["full"] }
-
-[[bin]]
-name = "server"
-path = "server.rs"
+[workspace.dependencies]
+log = "0.4.22" #Logging facade api, actual logger implementation for the facade is in the core crate
+anyhow = { version = "1.0.89" } #This core dependency is just a widely used crate in the community, it provides flexible, easy, idiomatic error handling in rust.
+server-api = { path = "./crates/server-api" }
+server-core = { path = "./crates/server-core" }
+server-runtime = { path = "./crates/server-runtime" }
