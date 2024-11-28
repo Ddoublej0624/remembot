@@ -1,0 +1,11 @@
+[package]
+name = "server-api"
+version = "0.1.0"
+edition = "2021"
+#TODO: Write description
+#TODO: Add authors
+
+[dependencies]
+anyhow.workspace = true
+log.workspace = true
+server-core.workspace = true

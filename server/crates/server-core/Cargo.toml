@@ -1,0 +1,14 @@
+
+[package]
+name = "server-core"
+version = "0.1.0"
+edition = "2021"
+#TODO: Write description
+#TODO: Add authors
+
+#Core module containing core shared functionality and features
+
+[dependencies]
+anyhow.workspace = true
+log.workspace = true
+simplelog = "0.12.2"
